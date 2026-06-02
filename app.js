@@ -4,12 +4,18 @@ const app = express();
 const cors = require('cors');
 
 const authRoutes = require('./routes/auth');
+const productRoutes = require('./routes/products');
+const dashboardRoutes = require('./routes/dashboard');
+const settingsRoutes = require('./routes/settings');
 
 
 app.use(express.json());
 app.use(cors());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/settings', settingsRoutes);
 
 
 app.get('/', (req, res) => {
